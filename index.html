@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Minecraft Server Downloads</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Herd Minecraft Server</title>
 
     <style>
         * {
@@ -42,8 +46,8 @@
             background:
                 radial-gradient(
                     circle at center,
-                    rgba(0, 0, 0, 0.18),
-                    rgba(0, 0, 0, 0.68)
+                    rgba(0, 0, 0, 0.16),
+                    rgba(0, 0, 0, 0.72)
                 );
         }
 
@@ -55,7 +59,7 @@
             pointer-events: none;
             background:
                 linear-gradient(
-                    rgba(0, 0, 0, 0.16),
+                    rgba(0, 0, 0, 0.12),
                     rgba(0, 0, 0, 0.48)
                 );
         }
@@ -63,7 +67,7 @@
         .page {
             width: min(1000px, 92%);
             margin: 0 auto;
-            padding: 70px 0;
+            padding: 60px 0;
         }
 
         .header {
@@ -71,9 +75,28 @@
             margin-bottom: 35px;
         }
 
+        .hero-icon-wrap {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 22px;
+        }
+
+        .hero-icon {
+            width: 185px;
+            height: 185px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid rgba(98, 182, 83, 0.95);
+            background: #101510;
+            box-shadow:
+                0 0 0 7px rgba(17, 31, 17, 0.9),
+                0 0 34px rgba(66, 245, 90, 0.34),
+                0 15px 35px rgba(0, 0, 0, 0.55);
+        }
+
         .header h1 {
             margin: 0 0 12px;
-            font-size: clamp(2.2rem, 6vw, 4rem);
+            font-size: clamp(2.3rem, 6vw, 4.2rem);
             text-shadow:
                 3px 3px 0 #111,
                 0 0 18px rgba(84, 255, 84, 0.32);
@@ -100,10 +123,10 @@
             display: inline-block;
             margin-bottom: 18px;
             padding: 7px 12px;
+            border: 1px solid #55a852;
             border-radius: 999px;
             color: #b8ffac;
             background: rgba(63, 150, 66, 0.2);
-            border: 1px solid #55a852;
             font-weight: bold;
         }
 
@@ -126,9 +149,9 @@
 
         .stat {
             padding: 18px;
+            border: 1px solid #344334;
             border-radius: 10px;
             background: rgba(8, 14, 8, 0.88);
-            border: 1px solid #344334;
             text-align: center;
         }
 
@@ -200,11 +223,11 @@
         .server-ip {
             display: inline-block;
             padding: 3px 8px;
-            border-radius: 6px;
-            background: #101510;
             border: 1px solid #3e513e;
-            font-family: Consolas, monospace;
+            border-radius: 6px;
             color: #b8ffac;
+            background: #101510;
+            font-family: Consolas, monospace;
         }
 
         .mod-heading {
@@ -253,8 +276,8 @@
             overflow: hidden;
             border: 1px solid #344334;
             border-radius: 8px;
-            background: rgba(8, 14, 8, 0.88);
             color: #d6d6d6;
+            background: rgba(8, 14, 8, 0.88);
             text-overflow: ellipsis;
             white-space: nowrap;
         }
@@ -268,9 +291,9 @@
 
         .mod-empty {
             grid-column: 1 / -1;
+            padding: 20px;
             color: #929292;
             text-align: center;
-            padding: 20px;
         }
 
         .small-text {
@@ -289,6 +312,11 @@
         @media (max-width: 650px) {
             .page {
                 padding: 35px 0;
+            }
+
+            .hero-icon {
+                width: 145px;
+                height: 145px;
             }
 
             .stats {
@@ -320,7 +348,11 @@
 
             body {
                 background:
-                    radial-gradient(circle at center, #102010, #020702);
+                    radial-gradient(
+                        circle at center,
+                        #102010,
+                        #020702
+                    );
             }
         }
     </style>
@@ -331,38 +363,65 @@
 
     <main class="page">
         <header class="header">
-            <h1>Minecraft Server</h1>
-            <p>Everything you need to join the modded server.</p>
+            <div class="hero-icon-wrap">
+                <img
+                    src="server-icon.png"
+                    alt="Herd Minecraft Server icon"
+                    class="hero-icon"
+                >
+            </div>
+
+            <h1>Herd Minecraft Server</h1>
+
+            <p>
+                Everything you need to join the modded server.
+            </p>
         </header>
 
         <section class="card">
-            <div class="status">Latest Server Pack</div>
+            <div class="status">
+                Latest Server Pack
+            </div>
 
-            <h2 id="release-title">Minecraft Server Files</h2>
+            <h2 id="release-title">
+                Minecraft Server Files
+            </h2>
 
             <p class="description">
-                Download the latest mod pack, extract it, and place the included
-                files into your Minecraft mods folder.
+                Download the latest mod pack, extract it, and place
+                the included files into your Minecraft mods folder.
             </p>
 
             <div class="stats">
                 <div class="stat">
-                    <strong id="version">Loading...</strong>
+                    <strong id="version">
+                        Loading...
+                    </strong>
+
                     <span>Version</span>
                 </div>
 
                 <div class="stat">
-                    <strong id="file-size">Loading...</strong>
+                    <strong id="file-size">
+                        Loading...
+                    </strong>
+
                     <span>Download size</span>
                 </div>
 
                 <div class="stat">
-                    <strong id="download-count">Loading...</strong>
+                    <strong id="download-count">
+                        Loading...
+                    </strong>
+
                     <span>Downloads</span>
                 </div>
 
                 <div class="stat">
-                    <strong id="mod-count">Loading...</strong>
+                    <strong id="mod-count">
+                        Loading...
+                    </strong>
+
                     <span>Included mods</span>
                 </div>
             </div>
@@ -379,11 +438,19 @@
 
                 <ol>
                     <li>Download the ZIP file.</li>
+
                     <li>Extract the contents.</li>
-                    <li>Place the included files into your Minecraft mods folder.</li>
+
+                    <li>
+                        Place the included files into your Minecraft
+                        mods folder.
+                    </li>
+
                     <li>
                         Join the server at
-                        <span class="server-ip">mc.amirdmgazzali.com</span>
+                        <span class="server-ip">
+                            mc.amirdmgazzali.com
+                        </span>
                     </li>
                 </ol>
             </div>
@@ -392,7 +459,10 @@
                 <div class="mod-heading">
                     <div>
                         <h3>Included Mods</h3>
-                        <p id="mod-summary">Loading mod list...</p>
+
+                        <p id="mod-summary">
+                            Loading mod list...
+                        </p>
                     </div>
 
                     <input
@@ -403,8 +473,13 @@
                     >
                 </div>
 
-                <div id="mod-list" class="mod-list">
-                    <div class="mod-empty">Loading mods...</div>
+                <div
+                    id="mod-list"
+                    class="mod-list"
+                >
+                    <div class="mod-empty">
+                        Loading mods...
+                    </div>
                 </div>
             </div>
 
@@ -422,10 +497,17 @@
         let includedMods = [];
 
         async function loadReleaseInformation() {
-            const versionElement = document.getElementById("version");
-            const sizeElement = document.getElementById("file-size");
-            const downloadsElement = document.getElementById("download-count");
-            const titleElement = document.getElementById("release-title");
+            const versionElement =
+                document.getElementById("version");
+
+            const sizeElement =
+                document.getElementById("file-size");
+
+            const downloadsElement =
+                document.getElementById("download-count");
+
+            const titleElement =
+                document.getElementById("release-title");
 
             try {
                 const response = await fetch(
@@ -433,22 +515,28 @@
                 );
 
                 if (!response.ok) {
-                    throw new Error(`GitHub returned ${response.status}`);
+                    throw new Error(
+                        `GitHub returned ${response.status}`
+                    );
                 }
 
                 const release = await response.json();
+
                 const asset = release.assets.find(
                     item => item.name === assetName
                 );
 
                 titleElement.textContent =
-                    release.name || "Minecraft Server Files";
+                    release.name ||
+                    "Minecraft Server Files";
 
                 versionElement.textContent =
-                    release.tag_name || "Latest";
+                    release.tag_name ||
+                    "Latest";
 
                 if (asset) {
-                    const sizeInMB = asset.size / 1024 / 1024;
+                    const sizeInMB =
+                        asset.size / 1024 / 1024;
 
                     sizeElement.textContent =
                         `${sizeInMB.toFixed(1)} MB`;
@@ -456,15 +544,26 @@
                     downloadsElement.textContent =
                         asset.download_count.toLocaleString();
                 } else {
-                    sizeElement.textContent = "Unavailable";
-                    downloadsElement.textContent = "0";
+                    sizeElement.textContent =
+                        "Unavailable";
+
+                    downloadsElement.textContent =
+                        "0";
                 }
             } catch (error) {
-                console.error("Could not load release information:", error);
+                console.error(
+                    "Could not load release information:",
+                    error
+                );
 
-                versionElement.textContent = "Latest";
-                sizeElement.textContent = "See download";
-                downloadsElement.textContent = "Unavailable";
+                versionElement.textContent =
+                    "Latest";
+
+                sizeElement.textContent =
+                    "See download";
+
+                downloadsElement.textContent =
+                    "Unavailable";
             }
         }
 
@@ -475,35 +574,53 @@
         }
 
         function displayMods(mods) {
-            const listElement = document.getElementById("mod-list");
-            const summaryElement = document.getElementById("mod-summary");
+            const listElement =
+                document.getElementById("mod-list");
+
+            const summaryElement =
+                document.getElementById("mod-summary");
 
             listElement.innerHTML = "";
 
             summaryElement.textContent =
-                `${mods.length.toLocaleString()} of ${includedMods.length.toLocaleString()} mods shown`;
+                `${mods.length.toLocaleString()} of ` +
+                `${includedMods.length.toLocaleString()} mods shown`;
 
             if (mods.length === 0) {
                 listElement.innerHTML =
-                    '<div class="mod-empty">No matching mods found.</div>';
+                    '<div class="mod-empty">' +
+                    'No matching mods found.' +
+                    '</div>';
+
                 return;
             }
 
             for (const filename of mods) {
-                const item = document.createElement("div");
+                const item =
+                    document.createElement("div");
 
-                item.className = "mod-item";
-                item.textContent = cleanModName(filename);
-                item.title = filename;
+                item.className =
+                    "mod-item";
+
+                item.textContent =
+                    cleanModName(filename);
+
+                item.title =
+                    filename;
 
                 listElement.appendChild(item);
             }
         }
 
         async function loadModList() {
-            const listElement = document.getElementById("mod-list");
-            const summaryElement = document.getElementById("mod-summary");
-            const modCountElement = document.getElementById("mod-count");
+            const listElement =
+                document.getElementById("mod-list");
+
+            const summaryElement =
+                document.getElementById("mod-summary");
+
+            const modCountElement =
+                document.getElementById("mod-count");
 
             try {
                 const response = await fetch(
@@ -511,56 +628,96 @@
                 );
 
                 if (!response.ok) {
-                    throw new Error(`Mod list returned ${response.status}`);
+                    throw new Error(
+                        `Mod list returned ${response.status}`
+                    );
                 }
 
-                const text = await response.text();
+                const text =
+                    await response.text();
 
                 includedMods = text
                     .split(/\r?\n/)
                     .map(line => line.trim())
                     .filter(line => line.length > 0)
-                    .filter(line => line.toLowerCase().endsWith(".jar"))
-                    .sort((a, b) => a.localeCompare(b));
+                    .filter(
+                        line =>
+                            line
+                                .toLowerCase()
+                                .endsWith(".jar")
+                    )
+                    .sort(
+                        (a, b) =>
+                            a.localeCompare(b)
+                    );
 
                 modCountElement.textContent =
                     includedMods.length.toLocaleString();
 
                 displayMods(includedMods);
             } catch (error) {
-                console.error("Could not load mod list:", error);
+                console.error(
+                    "Could not load mod list:",
+                    error
+                );
 
-                modCountElement.textContent = "Unavailable";
-                summaryElement.textContent = "Mod list unavailable";
+                modCountElement.textContent =
+                    "Unavailable";
+
+                summaryElement.textContent =
+                    "Mod list unavailable";
+
                 listElement.innerHTML =
-                    '<div class="mod-empty">Could not load the mod list.</div>';
+                    '<div class="mod-empty">' +
+                    'Could not load the mod list.' +
+                    '</div>';
             }
         }
 
         document
             .getElementById("mod-search")
-            .addEventListener("input", event => {
-                const query = event.target.value
-                    .trim()
-                    .toLowerCase();
+            .addEventListener(
+                "input",
+                event => {
+                    const query =
+                        event.target.value
+                            .trim()
+                            .toLowerCase();
 
-                const filteredMods = includedMods.filter(filename => {
-                    const cleanName = cleanModName(filename).toLowerCase();
+                    const filteredMods =
+                        includedMods.filter(
+                            filename => {
+                                const cleanName =
+                                    cleanModName(
+                                        filename
+                                    ).toLowerCase();
 
-                    return filename.toLowerCase().includes(query) ||
-                        cleanName.includes(query);
-                });
+                                return (
+                                    filename
+                                        .toLowerCase()
+                                        .includes(query) ||
+                                    cleanName.includes(query)
+                                );
+                            }
+                        );
 
-                displayMods(filteredMods);
-            });
+                    displayMods(filteredMods);
+                }
+            );
 
-        const matrixCanvas = document.getElementById("matrix-background");
-        const matrixContext = matrixCanvas.getContext("2d");
+        const matrixCanvas =
+            document.getElementById(
+                "matrix-background"
+            );
+
+        const matrixContext =
+            matrixCanvas.getContext("2d");
 
         const matrixCharacters =
             "01010111001010100110100101101001010110010101001100110101";
 
         const matrixFontSize = 18;
+
         let matrixColumns = [];
         let matrixAnimation;
 
@@ -571,10 +728,16 @@
             );
 
             matrixCanvas.width =
-                Math.floor(window.innerWidth * deviceScale);
+                Math.floor(
+                    window.innerWidth *
+                    deviceScale
+                );
 
             matrixCanvas.height =
-                Math.floor(window.innerHeight * deviceScale);
+                Math.floor(
+                    window.innerHeight *
+                    deviceScale
+                );
 
             matrixCanvas.style.width =
                 `${window.innerWidth}px`;
@@ -591,21 +754,32 @@
                 0
             );
 
-            const columnCount = Math.ceil(
-                window.innerWidth / matrixFontSize
-            );
+            const columnCount =
+                Math.ceil(
+                    window.innerWidth /
+                    matrixFontSize
+                );
 
-            matrixColumns = Array.from(
-                { length: columnCount },
-                () => Math.floor(
-                    Math.random() *
-                    (window.innerHeight / matrixFontSize)
-                )
-            );
+            matrixColumns =
+                Array.from(
+                    {
+                        length: columnCount
+                    },
+                    () =>
+                        Math.floor(
+                            Math.random() *
+                            (
+                                window.innerHeight /
+                                matrixFontSize
+                            )
+                        )
+                );
         }
 
         function drawMatrix() {
-            matrixContext.fillStyle = "rgba(2, 7, 2, 0.09)";
+            matrixContext.fillStyle =
+                "rgba(2, 7, 2, 0.09)";
+
             matrixContext.fillRect(
                 0,
                 0,
@@ -613,7 +787,9 @@
                 window.innerHeight
             );
 
-            matrixContext.fillStyle = "#42f55a";
+            matrixContext.fillStyle =
+                "#42f55a";
+
             matrixContext.font =
                 `${matrixFontSize}px Consolas, monospace`;
 
@@ -635,12 +811,19 @@
                         )
                     ];
 
-                const x = column * matrixFontSize;
+                const x =
+                    column *
+                    matrixFontSize;
+
                 const y =
                     matrixColumns[column] *
                     matrixFontSize;
 
-                matrixContext.fillText(character, x, y);
+                matrixContext.fillText(
+                    character,
+                    x,
+                    y
+                );
 
                 if (
                     y > window.innerHeight &&
@@ -666,21 +849,27 @@
 
             clearInterval(matrixAnimation);
 
-            matrixAnimation = setInterval(
-                drawMatrix,
-                55
-            );
+            matrixAnimation =
+                setInterval(
+                    drawMatrix,
+                    55
+                );
         }
 
         let resizeTimeout;
 
-        window.addEventListener("resize", () => {
-            clearTimeout(resizeTimeout);
+        window.addEventListener(
+            "resize",
+            () => {
+                clearTimeout(resizeTimeout);
 
-            resizeTimeout = setTimeout(() => {
-                resizeMatrixCanvas();
-            }, 150);
-        });
+                resizeTimeout =
+                    setTimeout(
+                        resizeMatrixCanvas,
+                        150
+                    );
+            }
+        );
 
         resizeMatrixCanvas();
         startMatrixAnimation();
