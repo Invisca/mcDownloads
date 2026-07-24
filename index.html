@@ -2,15 +2,278 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Minecraft Downloads</title>
-</head>
-<body>
-    <h1>Minecraft Server Downloads</h1>
-    <p>Download the files needed to join the server.</p>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <a href="https://github.com/Invisca/mcDownloads/releases/latest/download/mod.list.zip">
-        Download Latest Mod List
-    </a>
+    <title>Minecraft Server Downloads</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            background:
+                linear-gradient(rgba(7, 15, 10, 0.82), rgba(7, 15, 10, 0.94)),
+                url("https://images.unsplash.com/photo-1607988795691-3d0147b43231?auto=format&fit=crop&w=1920&q=80");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .page {
+            width: min(900px, 92%);
+            margin: 0 auto;
+            padding: 70px 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .header h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            text-shadow: 3px 3px 0 #111;
+        }
+
+        .header p {
+            margin: 0;
+            color: #d2d2d2;
+            font-size: 1.1rem;
+        }
+
+        .card {
+            padding: 34px;
+            border: 2px solid #4d6f45;
+            border-radius: 16px;
+            background: rgba(24, 31, 24, 0.94);
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.5);
+        }
+
+        .status {
+            display: inline-block;
+            margin-bottom: 18px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            color: #b8ffac;
+            background: rgba(63, 150, 66, 0.2);
+            border: 1px solid #55a852;
+            font-weight: bold;
+        }
+
+        .card h2 {
+            margin: 0 0 12px;
+            font-size: 2rem;
+        }
+
+        .description {
+            color: #d0d0d0;
+            line-height: 1.6;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .stat {
+            padding: 18px;
+            border-radius: 10px;
+            background: #111711;
+            border: 1px solid #344334;
+            text-align: center;
+        }
+
+        .stat strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.25rem;
+        }
+
+        .stat span {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .download-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            border: 0;
+            border-radius: 10px;
+            color: white;
+            background: linear-gradient(#62b653, #397e32);
+            box-shadow: 0 5px 0 #24551f;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: bold;
+            transition: transform 0.15s, filter 0.15s;
+        }
+
+        .download-button:hover {
+            filter: brightness(1.12);
+            transform: translateY(-2px);
+        }
+
+        .download-button:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0 #24551f;
+        }
+
+        .instructions {
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid #455045;
+        }
+
+        .instructions h3 {
+            margin-top: 0;
+        }
+
+        .instructions ol {
+            padding-left: 22px;
+            color: #d0d0d0;
+            line-height: 1.8;
+        }
+
+        .small-text {
+            margin-top: 16px;
+            color: #929292;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 650px) {
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="page">
+        <header class="header">
+            <h1>Minecraft Server</h1>
+            <p>Everything you need to join the modded server.</p>
+        </header>
+
+        <section class="card">
+            <div class="status">Latest Server Pack</div>
+
+            <h2 id="release-title">Minecraft Server Files</h2>
+
+            <p class="description">
+                Download the latest mod list and place the included files
+                into the appropriate Minecraft or Modrinth profile.
+            </p>
+
+            <div class="stats">
+                <div class="stat">
+                    <strong id="version">Loading...</strong>
+                    <span>Version</span>
+                </div>
+
+                <div class="stat">
+                    <strong id="file-size">Loading...</strong>
+                    <span>Download size</span>
+                </div>
+
+                <div class="stat">
+                    <strong id="download-count">Loading...</strong>
+                    <span>Downloads</span>
+                </div>
+            </div>
+
+            <a
+                class="download-button"
+                href="https://github.com/Invisca/mcDownloads/releases/latest/download/mod.list.zip"
+            >
+                Download Latest Mod List
+            </a>
+
+            <div class="instructions">
+                <h3>Installation</h3>
+
+                <ol>
+                    <li>Download the ZIP file.</li>
+                    <li>Extract the contents.</li>
+                    <li>Place the files into your Minecraft or Modrinth profile.</li>
+                    <li>Launch the correct Minecraft version and join the server.</li>
+                </ol>
+            </div>
+
+            <p class="small-text">
+                Hosted through GitHub Releases
+            </p>
+        </section>
+    </main>
+
+    <script>
+        const owner = "Invisca";
+        const repository = "mcDownloads";
+        const assetName = "mod.list.zip";
+
+        async function loadReleaseInformation() {
+            const versionElement = document.getElementById("version");
+            const sizeElement = document.getElementById("file-size");
+            const downloadsElement = document.getElementById("download-count");
+            const titleElement = document.getElementById("release-title");
+
+            try {
+                const response = await fetch(
+                    `https://api.github.com/repos/${owner}/${repository}/releases/latest`
+                );
+
+                if (!response.ok) {
+                    throw new Error(`GitHub returned ${response.status}`);
+                }
+
+                const release = await response.json();
+                const asset = release.assets.find(
+                    item => item.name === assetName
+                );
+
+                titleElement.textContent =
+                    release.name || "Minecraft Server Files";
+
+                versionElement.textContent =
+                    release.tag_name || "Latest";
+
+                if (asset) {
+                    const sizeInMB = asset.size / 1024 / 1024;
+
+                    sizeElement.textContent =
+                        `${sizeInMB.toFixed(1)} MB`;
+
+                    downloadsElement.textContent =
+                        asset.download_count.toLocaleString();
+                } else {
+                    sizeElement.textContent = "Unavailable";
+                    downloadsElement.textContent = "0";
+                }
+            } catch (error) {
+                console.error("Could not load release information:", error);
+
+                versionElement.textContent = "Latest";
+                sizeElement.textContent = "See download";
+                downloadsElement.textContent = "Unavailable";
+            }
+        }
+
+        loadReleaseInformation();
+    </script>
 </body>
 </html>
